@@ -88,7 +88,7 @@
   .logo-img {
     width: clamp(280px, 55vw, 560px);
     display: block;
-    filter: drop-shadow(0 0 30px rgba(255,255,255,0.5)) drop-shadow(0 8px 24px rgba(0,0,0,0.8));
+    filter: drop-shadow(0 0 20px rgba(192,0,26,0.6));
     animation: tilt-float 5s ease-in-out infinite;
     transform-origin: center center;
     transition: filter 0.3s ease;
@@ -96,7 +96,7 @@
   }
 
   .logo-img:hover {
-    filter: drop-shadow(0 0 50px rgba(255,255,255,0.7)) drop-shadow(0 8px 32px rgba(0,0,0,0.9));
+    filter: drop-shadow(0 0 35px rgba(192,0,26,0.9));
     animation: tilt-float-hover 5s ease-in-out infinite;
   }
 
@@ -117,19 +117,20 @@
     100% { transform: rotate(-5deg) translateY(0px) scale(1.05); }
   }
 
-  /* Subtle shimmer behind logo */
+  /* Intense backlit core to illuminate black text */
   .logo-wrapper::after {
     content: '';
     position: absolute;
-    inset: -50px;
-    background: radial-gradient(ellipse, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.3) 50%, transparent 70%);
+    inset: 25% 15%; /* Concentrates the light behind the text */
+    background: #ffffff;
+    box-shadow: 0 0 45px 35px #ffffff, 0 0 90px 60px rgba(255, 255, 255, 0.4);
     animation: shimmer-pulse 5s ease-in-out infinite;
     z-index: -1;
     border-radius: 50%;
   }
 
   @keyframes shimmer-pulse {
-    0%, 100% { opacity: 0.5; transform: scale(0.95); }
+    0%, 100% { opacity: 0.75; transform: scale(0.95); }
     50% { opacity: 1; transform: scale(1.05); }
   }
 
